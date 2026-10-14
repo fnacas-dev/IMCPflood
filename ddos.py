@@ -6,7 +6,6 @@ from icmplib import ping, SocketAddressError
 def generate_ipv4():
     return ".".join(str(random.randint(0, 255)) for _ in range(4))
 
-# Simplificamos em uma única função que recebe o IP do alvo
 def send_ping(id_thread, ip_alvo):
     print(f"[Thread {id_thread}] Starting pings to {ip_alvo}...")
 
@@ -26,7 +25,7 @@ while True:
         host = generate_ipv4()
         print(f'Right! Random IPv4 generated: {host}. Starting in a few seconds...')
         break
-    elif 7 <= len(ip) <= 15: # Garante um tamanho mínimo para um IP válido (ex: 1.1.1.1)
+    elif 7 <= len(ip) <= 15: 
         host = ip
         print(f'Right! Manual IP set to: {host}. Starting in a few seconds...')
         break
